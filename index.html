@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html lang="ha">
-<head><title>Zuciya ta - Littafin Soyayya</title>logo.png
+<head><style>
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease 2s forwards;
+}
+
+#splash img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+#splash h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+#splash p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+</style> <title>Zuciya ta - Littafin Soyayya</title>logo.png
 
 <link rel="icon" type="image/png" href="logo.png">
 <meta charset="UTF-8">
