@@ -1,7 +1,6 @@
 ‎<!DOCTYPE html>
 ‎<html lang="ha">
 ‎<head>
-‎
 ‎<meta charset="UTF-8">
 ‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
 ‎
@@ -10,7 +9,6 @@
 ‎<link rel="icon" type="image/png" href="logo.png">
 ‎
 ‎<style>
-‎
 ‎*{
 ‎  box-sizing:border-box;
 ‎  margin:0;
@@ -18,18 +16,16 @@
 ‎}
 ‎
 ‎body{
-‎  font-family:Georgia, "Times New Roman", serif;
+‎  font-family:Georgia,"Times New Roman",serif;
 ‎  background:#f8f1e7;
 ‎  color:#33251f;
 ‎  line-height:1.8;
 ‎}
 ‎
-‎/* SPLASH SCREEN */
-‎
 ‎#splash{
 ‎  position:fixed;
 ‎  inset:0;
-‎  background:#ffffff;
+‎  background:white;
 ‎  display:flex;
 ‎  flex-direction:column;
 ‎  justify-content:center;
@@ -42,17 +38,15 @@
 ‎  width:120px;
 ‎  height:120px;
 ‎  object-fit:contain;
-‎  margin-bottom:20px;
+‎  margin-bottom:18px;
 ‎}
 ‎
 ‎#splash h1{
 ‎  font-size:30px;
-‎  margin:0;
 ‎}
 ‎
 ‎#splash p{
 ‎  margin-top:8px;
-‎  font-size:16px;
 ‎}
 ‎
 ‎@keyframes fadeOut{
@@ -61,8 +55,6 @@
 ‎    visibility:hidden;
 ‎  }
 ‎}
-‎
-‎/* HEADER */
 ‎
 ‎header{
 ‎  background:linear-gradient(135deg,#7b1e3a,#b8325c);
@@ -77,18 +69,16 @@
 ‎
 ‎header h1{
 ‎  font-size:32px;
-‎  letter-spacing:1px;
 ‎}
 ‎
 ‎header p{
 ‎  font-size:14px;
-‎  opacity:.9;
 ‎}
 ‎
-‎.menu-btn{
+‎.menu-btn,
+‎.dark-btn{
 ‎  position:absolute;
-‎  left:15px;
-‎  top:22px;
+‎  top:20px;
 ‎  background:none;
 ‎  border:0;
 ‎  color:white;
@@ -96,18 +86,13 @@
 ‎  cursor:pointer;
 ‎}
 ‎
-‎.dark-btn{
-‎  position:absolute;
-‎  right:15px;
-‎  top:22px;
-‎  background:none;
-‎  border:0;
-‎  color:white;
-‎  font-size:23px;
-‎  cursor:pointer;
+‎.menu-btn{
+‎  left:15px;
 ‎}
 ‎
-‎/* SIDE MENU */
+‎.dark-btn{
+‎  right:15px;
+‎}
 ‎
 ‎.side-menu{
 ‎  position:fixed;
@@ -115,7 +100,7 @@
 ‎  top:0;
 ‎  width:275px;
 ‎  height:100%;
-‎  background:#fff;
+‎  background:white;
 ‎  z-index:30;
 ‎  box-shadow:5px 0 18px #0004;
 ‎  transition:.3s;
@@ -145,10 +130,6 @@
 ‎  cursor:pointer;
 ‎}
 ‎
-‎.side-menu button:hover{
-‎  background:#f7e3ea;
-‎}
-‎
 ‎.overlay{
 ‎  display:none;
 ‎  position:fixed;
@@ -161,15 +142,11 @@
 ‎  display:block;
 ‎}
 ‎
-‎/* MAIN */
-‎
 ‎main{
 ‎  max-width:850px;
 ‎  margin:auto;
 ‎  padding:25px 18px 70px;
 ‎}
-‎
-‎/* COVER */
 ‎
 ‎.cover{
 ‎  text-align:center;
@@ -180,14 +157,13 @@
 ‎  margin-bottom:25px;
 ‎}
 ‎
-‎.cover .heart{
+‎.heart{
 ‎  font-size:55px;
 ‎}
 ‎
 ‎.cover h2{
 ‎  color:#7b1e3a;
 ‎  font-size:36px;
-‎  margin:8px 0;
 ‎}
 ‎
 ‎.cover h3{
@@ -197,10 +173,7 @@
 ‎
 ‎.author{
 ‎  margin-top:20px;
-‎  font-size:15px;
 ‎}
-‎
-‎/* SEARCH */
 ‎
 ‎.search{
 ‎  width:100%;
@@ -210,8 +183,6 @@
 ‎  margin-bottom:20px;
 ‎  font-size:16px;
 ‎}
-‎
-‎/* CHAPTERS */
 ‎
 ‎.chapter-list{
 ‎  display:grid;
@@ -235,8 +206,6 @@
 ‎  font-size:13px;
 ‎  color:#777;
 ‎}
-‎
-‎/* READER */
 ‎
 ‎.reader{
 ‎  display:none;
@@ -272,8 +241,6 @@
 ‎  margin-bottom:20px;
 ‎}
 ‎
-‎/* FOOTER */
-‎
 ‎footer{
 ‎  text-align:center;
 ‎  padding:25px;
@@ -281,8 +248,6 @@
 ‎  color:white;
 ‎  font-size:13px;
 ‎}
-‎
-‎/* DARK MODE */
 ‎
 ‎body.dark{
 ‎  background:#171317;
@@ -316,10 +281,7 @@
 ‎  border-color:#555;
 ‎}
 ‎
-‎/* MOBILE */
-‎
 ‎@media(max-width:600px){
-‎
 ‎  header h1{
 ‎    font-size:25px;
 ‎  }
@@ -335,15 +297,11 @@
 ‎  .reader p{
 ‎    font-size:16px;
 ‎  }
-‎
 ‎}
-‎
 ‎</style>
 ‎</head>
 ‎
 ‎<body>
-‎
-‎<!-- SPLASH SCREEN -->
 ‎
 ‎<div id="splash">
 ‎  <img src="logo.png" alt="Zuciya ta">
@@ -351,62 +309,36 @@
 ‎  <p>Littafin Soyayya</p>
 ‎</div>
 ‎
-‎<!-- HEADER -->
-‎
 ‎<header>
-‎
-‎  <button class="menu-btn" onclick="openMenu()">☰</button>
-‎
+‎  <button class="menu-btn" id="menuBtn">☰</button>
 ‎  <h1>Zuciya ta</h1>
-‎
 ‎  <p>Labarin Khalid da Fatima</p>
-‎
-‎  <button class="dark-btn" onclick="toggleDark()">☾</button>
-‎
+‎  <button class="dark-btn" id="darkBtn">☾</button>
 ‎</header>
 ‎
-‎<!-- OVERLAY -->
-‎
-‎<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-‎
-‎<!-- SIDE MENU -->
+‎<div class="overlay" id="overlay"></div>
 ‎
 ‎<nav class="side-menu" id="sideMenu">
-‎
 ‎  <h2>📖 Zuciya ta</h2>
 ‎
-‎  <button onclick="showHome()">🏠 Farko</button>
-‎
-‎  <button onclick="openChapter(1)">Babi na 1</button>
-‎
-‎  <button onclick="openChapter(2)">Babi na 2</button>
-‎
-‎  <button onclick="openChapter(3)">Babi na 3</button>
-‎
-‎  <button onclick="openChapter(4)">Babi na 4</button>
-‎
-‎  <button onclick="openChapter(5)">Babi na 5</button>
-‎
-‎  <button onclick="openChapter(6)">Babi na 6</button>
-‎
-‎  <button onclick="openChapter(7)">Babi na 7</button>
-‎
-‎  <button onclick="openChapter(8)">Babi na 8</button>
-‎
-‎  <button onclick="openChapter(9)">Babi na 9</button>
-‎
-‎  <button onclick="openChapter(10)">Babi na 10</button>
-‎
+‎  <button data-chapter="0">🏠 Farko</button>
+‎  <button data-chapter="1">Babi na 1</button>
+‎  <button data-chapter="2">Babi na 2</button>
+‎  <button data-chapter="3">Babi na 3</button>
+‎  <button data-chapter="4">Babi na 4</button>
+‎  <button data-chapter="5">Babi na 5</button>
+‎  <button data-chapter="6">Babi na 6</button>
+‎  <button data-chapter="7">Babi na 7</button>
+‎  <button data-chapter="8">Babi na 8</button>
+‎  <button data-chapter="9">Babi na 9</button>
+‎  <button data-chapter="10">Babi na 10</button>
 ‎</nav>
-‎
-‎<!-- MAIN -->
 ‎
 ‎<main>
 ‎
 ‎<section id="home">
 ‎
 ‎  <div class="cover">
-‎
 ‎    <div class="heart">❤️</div>
 ‎
 ‎    <h2>Zuciya ta</h2>
@@ -414,13 +346,9 @@
 ‎    <h3>Labarin Khalid da Fatima</h3>
 ‎
 ‎    <div class="author">
-‎
 ‎      <p><strong>Marubuci:</strong> Khalid Dauda</p>
-‎
 ‎      <p>Labari na soyayya</p>
-‎
 ‎    </div>
-‎
 ‎  </div>
 ‎
 ‎  <input
@@ -428,70 +356,68 @@
 ‎    id="search"
 ‎    type="text"
 ‎    placeholder="🔎 Nemo babi..."
-‎    onkeyup="searchChapters()"
 ‎  >
 ‎
 ‎  <div class="chapter-list" id="chapterList">
 ‎
-‎    <div class="chapter-card" onclick="openChapter(1)">
+‎    <div class="chapter-card" data-chapter="1">
 ‎      <h3>Babi na 1</h3>
 ‎      <p>Farkon labarin Khalid da Fatima...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(2)">
+‎    <div class="chapter-card" data-chapter="2">
 ‎      <h3>Babi na 2</h3>
-‎      <p>Ci gaban labarin...</p>
+‎      <p>Ganawar da ta canja komai...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(3)">
+‎    <div class="chapter-card" data-chapter="3">
 ‎      <h3>Babi na 3</h3>
-‎      <p>Wani sabon yanayi ya fara...</p>
+‎      <p>Zuciya ta fara magana...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(4)">
+‎    <div class="chapter-card" data-chapter="4">
 ‎      <h3>Babi na 4</h3>
-‎      <p>Abin da ya faru tsakanin su...</p>
+‎      <p>Sirrin zuciya...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(5)">
+‎    <div class="chapter-card" data-chapter="5">
 ‎      <h3>Babi na 5</h3>
-‎      <p>Labarin yana ƙara armashi...</p>
+‎      <p>Lokacin gwaji...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(6)">
+‎    <div class="chapter-card" data-chapter="6">
 ‎      <h3>Babi na 6</h3>
-‎      <p>Wani muhimmin lokaci a rayuwarsu...</p>
+‎      <p>Ƙarin kusanci...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(7)">
+‎    <div class="chapter-card" data-chapter="7">
 ‎      <h3>Babi na 7</h3>
-‎      <p>Ci gaba...</p>
+‎      <p>Sabon shafi...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(8)">
+‎    <div class="chapter-card" data-chapter="8">
 ‎      <h3>Babi na 8</h3>
-‎      <p>Ci gaba...</p>
+‎      <p>Gwajin amana...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(9)">
+‎    <div class="chapter-card" data-chapter="9">
 ‎      <h3>Babi na 9</h3>
-‎      <p>Ci gaba...</p>
+‎      <p>Abin da zuciya ke so...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" onclick="openChapter(10)">
+‎    <div class="chapter-card" data-chapter="10">
 ‎      <h3>Babi na 10</h3>
-‎      <p>Ƙarshen littafin...</p>
+‎      <p>Ƙarshen farko...</p>
 ‎    </div>
 ‎
 ‎  </div>
-‎
 ‎</section>
-‎
-‎<!-- READER -->
 ‎
 ‎<section class="reader" id="reader">
 ‎
-‎  <button class="back-btn" onclick="showHome()">← Komawa</button>
+‎  <button class="back-btn" id="backBtn">
+‎    ← Komawa
+‎  </button>
 ‎
 ‎  <h2 id="chapterTitle"></h2>
 ‎
@@ -525,7 +451,7 @@
 ‎text:`
 ‎<p>Bayan ganawar farko, Khalid ya ci gaba da tunanin Fatima. Ba wai don kawai ya gan ta ba ne, amma saboda yadda halinta ya yi masa tasiri.</p>
 ‎
-‎<p>Fatima kuwa ita ma ta lura da natsuwar Khalid. Duk da cewa ba su san juna sosai ba, akwai wani yanayi na fahimtar juna da ya fara bayyana a tsakaninsu.</p>
+‎<p>Fatima ita ma ta lura da natsuwar Khalid. Duk da cewa ba su san juna sosai ba, akwai wani yanayi na fahimtar juna da ya fara bayyana a tsakaninsu.</p>
 ‎
 ‎<p>Rayuwa ta fara ɗaukar sabon salo, kuma labarin su ya fara yin nisa fiye da yadda suka zata.</p>
 ‎`
@@ -536,7 +462,7 @@
 ‎text:`
 ‎<p>Yayin da kwanaki suka wuce, Khalid ya fara fahimtar cewa abin da yake ji ba kawai sha'awa ce ta wucewa ba.</p>
 ‎
-‎<p>Fatima ta zama mutum da yake jin daɗin tattaunawa da shi, kuma kowace magana da suke yi tana ƙara kusantar da su.</p>
+‎<p>Fatima ta zama mutum da yake jin daɗin tattaunawa da ita, kuma kowace magana da suke yi tana ƙara kusantar da su.</p>
 ‎
 ‎<p>Amma soyayya tana buƙatar haƙuri, fahimta da amana. Su ma sai sun koyi waɗannan abubuwan.</p>
 ‎`
@@ -578,11 +504,11 @@
 ‎7:{
 ‎title:"Babi na 7 — Sabon Shafi",
 ‎text:`
-‎<p>Wannan babin zai ci gaba da labarin Khalid da Fatima daga inda babi na shida ya tsaya.</p>
+‎<p>Wannan babin ya ci gaba da labarin Khalid da Fatima daga inda babi na shida ya tsaya.</p>
 ‎
-‎<p>A wannan lokaci, abubuwan da suka faru za su fara bayyana musu ainihin abin da suke so daga rayuwarsu.</p>
+‎<p>A wannan lokaci, abubuwan da suka faru sun fara bayyana musu ainihin abin da suke so daga rayuwarsu.</p>
 ‎
-‎<p>Shafin soyayyarsu yana buɗewa zuwa wani sabon mataki.</p>
+‎<p>Shafin soyayyarsu ya buɗe zuwa wani sabon mataki.</p>
 ‎`
 ‎},
 ‎
@@ -623,87 +549,102 @@
 ‎
 ‎};
 ‎
-‎/* MENU */
+‎const home = document.getElementById("home");
+‎const reader = document.getElementById("reader");
+‎const chapterTitle = document.getElementById("chapterTitle");
+‎const chapterText = document.getElementById("chapterText");
+‎const sideMenu = document.getElementById("sideMenu");
+‎const overlay = document.getElementById("overlay");
 ‎
 ‎function openMenu(){
-‎
-‎  document.getElementById("sideMenu").classList.add("open");
-‎
-‎  document.getElementById("overlay").classList.add("show");
-‎
+‎  sideMenu.classList.add("open");
+‎  overlay.classList.add("show");
 ‎}
 ‎
 ‎function closeMenu(){
-‎
-‎  document.getElementById("sideMenu").classList.remove("open");
-‎
-‎  document.getElementById("overlay").classList.remove("show");
-‎
+‎  sideMenu.classList.remove("open");
+‎  overlay.classList.remove("show");
 ‎}
-‎
-‎/* HOME */
 ‎
 ‎function showHome(){
-‎
-‎  document.getElementById("home").style.display="block";
-‎
-‎  document.getElementById("reader").classList.remove("active");
-‎
+‎  home.style.display="block";
+‎  reader.classList.remove("active");
 ‎  closeMenu();
-‎
 ‎  window.scrollTo(0,0);
-‎
 ‎}
-‎
-‎/* OPEN CHAPTER */
 ‎
 ‎function openChapter(number){
 ‎
-‎  const chapter=chapters[number];
+‎  const chapter = chapters[number];
 ‎
-‎  document.getElementById("home").style.display="none";
+‎  if(!chapter){
+‎    return;
+‎  }
 ‎
-‎  document.getElementById("reader").classList.add("active");
+‎  home.style.display="none";
 ‎
-‎  document.getElementById("chapterTitle").innerHTML=chapter.title;
+‎  reader.classList.add("active");
 ‎
-‎  document.getElementById("chapterText").innerHTML=chapter.text;
+‎  chapterTitle.textContent=chapter.title;
+‎
+‎  chapterText.innerHTML=chapter.text;
 ‎
 ‎  closeMenu();
 ‎
 ‎  window.scrollTo(0,0);
-‎
 ‎}
 ‎
-‎/* DARK MODE */
+‎document.getElementById("menuBtn").addEventListener("click",openMenu);
 ‎
-‎function toggleDark(){
+‎overlay.addEventListener("click",closeMenu);
 ‎
+‎document.getElementById("backBtn").addEventListener("click",showHome);
+‎
+‎document.getElementById("darkBtn").addEventListener("click",function(){
 ‎  document.body.classList.toggle("dark");
+‎});
 ‎
-‎}
+‎document.querySelectorAll(".chapter-card").forEach(function(card){
 ‎
-‎/* SEARCH */
+‎  card.addEventListener("click",function(){
 ‎
-‎function searchChapters(){
+‎    const number = Number(card.dataset.chapter);
 ‎
-‎  const value=document
-‎    .getElementById("search")
-‎    .value
-‎    .toLowerCase();
-‎
-‎  const cards=document.querySelectorAll(".chapter-card");
-‎
-‎  cards.forEach(card=>{
-‎
-‎    card.style.display=
-‎      card.innerText.toLowerCase().includes(value)
-‎      ? "block"
-‎      : "none";
+‎    openChapter(number);
 ‎
 ‎  });
 ‎
-‎}
+‎});
+‎
+‎document.querySelectorAll(".side-menu button").forEach(function(button){
+‎
+‎  button.addEventListener("click",function(){
+‎
+‎    const number = Number(button.dataset.chapter);
+‎
+‎    if(number === 0){
+‎      showHome();
+‎    }else{
+‎      openChapter(number);
+‎    }
+‎
+‎  });
+‎
+‎});
+‎
+‎document.getElementById("search").addEventListener("input",function(){
+‎
+‎  const value=this.value.toLowerCase();
+‎
+‎  document.querySelectorAll(".chapter-card").forEach(function(card){
+‎
+‎    const text=card.innerText.toLowerCase();
+‎
+‎    card.style.display=text.includes(value) ? "block" : "none";
+‎
+‎  });
+‎
+‎});
 ‎
 ‎</script>
 ‎
