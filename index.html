@@ -6,8 +6,6 @@
 ‎
 ‎<title>Zuciya ta — Khalid Dauda</title>
 ‎
-‎<link rel="icon" type="image/png" href="logo.png">
-‎
 ‎<style>
 ‎*{
 ‎  box-sizing:border-box;
@@ -16,44 +14,10 @@
 ‎}
 ‎
 ‎body{
-‎  font-family:Georgia,"Times New Roman",serif;
+‎  font-family:Georgia, "Times New Roman", serif;
 ‎  background:#f8f1e7;
 ‎  color:#33251f;
 ‎  line-height:1.8;
-‎}
-‎
-‎#splash{
-‎  position:fixed;
-‎  inset:0;
-‎  background:white;
-‎  display:flex;
-‎  flex-direction:column;
-‎  justify-content:center;
-‎  align-items:center;
-‎  z-index:9999;
-‎  animation:fadeOut 2s ease 2s forwards;
-‎}
-‎
-‎#splash img{
-‎  width:120px;
-‎  height:120px;
-‎  object-fit:contain;
-‎  margin-bottom:18px;
-‎}
-‎
-‎#splash h1{
-‎  font-size:30px;
-‎}
-‎
-‎#splash p{
-‎  margin-top:8px;
-‎}
-‎
-‎@keyframes fadeOut{
-‎  to{
-‎    opacity:0;
-‎    visibility:hidden;
-‎  }
 ‎}
 ‎
 ‎header{
@@ -69,16 +33,18 @@
 ‎
 ‎header h1{
 ‎  font-size:32px;
+‎  letter-spacing:1px;
 ‎}
 ‎
 ‎header p{
 ‎  font-size:14px;
+‎  opacity:.9;
 ‎}
 ‎
-‎.menu-btn,
-‎.dark-btn{
+‎.menu-btn{
 ‎  position:absolute;
-‎  top:20px;
+‎  left:15px;
+‎  top:22px;
 ‎  background:none;
 ‎  border:0;
 ‎  color:white;
@@ -86,12 +52,15 @@
 ‎  cursor:pointer;
 ‎}
 ‎
-‎.menu-btn{
-‎  left:15px;
-‎}
-‎
 ‎.dark-btn{
+‎  position:absolute;
 ‎  right:15px;
+‎  top:22px;
+‎  background:none;
+‎  border:0;
+‎  color:white;
+‎  font-size:23px;
+‎  cursor:pointer;
 ‎}
 ‎
 ‎.side-menu{
@@ -100,7 +69,7 @@
 ‎  top:0;
 ‎  width:275px;
 ‎  height:100%;
-‎  background:white;
+‎  background:#fff;
 ‎  z-index:30;
 ‎  box-shadow:5px 0 18px #0004;
 ‎  transition:.3s;
@@ -130,6 +99,10 @@
 ‎  cursor:pointer;
 ‎}
 ‎
+‎.side-menu button:hover{
+‎  background:#f7e3ea;
+‎}
+‎
 ‎.overlay{
 ‎  display:none;
 ‎  position:fixed;
@@ -157,13 +130,14 @@
 ‎  margin-bottom:25px;
 ‎}
 ‎
-‎.heart{
+‎.cover .heart{
 ‎  font-size:55px;
 ‎}
 ‎
 ‎.cover h2{
 ‎  color:#7b1e3a;
 ‎  font-size:36px;
+‎  margin:8px 0;
 ‎}
 ‎
 ‎.cover h3{
@@ -173,6 +147,7 @@
 ‎
 ‎.author{
 ‎  margin-top:20px;
+‎  font-size:15px;
 ‎}
 ‎
 ‎.search{
@@ -303,35 +278,31 @@
 ‎
 ‎<body>
 ‎
-‎<div id="splash">
-‎  <img src="logo.png" alt="Zuciya ta">
-‎  <h1>Zuciya ta</h1>
-‎  <p>Littafin Soyayya</p>
-‎</div>
-‎
 ‎<header>
-‎  <button class="menu-btn" id="menuBtn">☰</button>
+‎  <button class="menu-btn" onclick="openMenu()">☰</button>
+‎
 ‎  <h1>Zuciya ta</h1>
 ‎  <p>Labarin Khalid da Fatima</p>
-‎  <button class="dark-btn" id="darkBtn">☾</button>
+‎
+‎  <button class="dark-btn" onclick="toggleDark()">☾</button>
 ‎</header>
 ‎
-‎<div class="overlay" id="overlay"></div>
+‎<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 ‎
 ‎<nav class="side-menu" id="sideMenu">
 ‎  <h2>📖 Zuciya ta</h2>
 ‎
-‎  <button data-chapter="0">🏠 Farko</button>
-‎  <button data-chapter="1">Babi na 1</button>
-‎  <button data-chapter="2">Babi na 2</button>
-‎  <button data-chapter="3">Babi na 3</button>
-‎  <button data-chapter="4">Babi na 4</button>
-‎  <button data-chapter="5">Babi na 5</button>
-‎  <button data-chapter="6">Babi na 6</button>
-‎  <button data-chapter="7">Babi na 7</button>
-‎  <button data-chapter="8">Babi na 8</button>
-‎  <button data-chapter="9">Babi na 9</button>
-‎  <button data-chapter="10">Babi na 10</button>
+‎  <button onclick="showHome()">🏠 Farko</button>
+‎  <button onclick="openChapter(1)">Babi na 1</button>
+‎  <button onclick="openChapter(2)">Babi na 2</button>
+‎  <button onclick="openChapter(3)">Babi na 3</button>
+‎  <button onclick="openChapter(4)">Babi na 4</button>
+‎  <button onclick="openChapter(5)">Babi na 5</button>
+‎  <button onclick="openChapter(6)">Babi na 6</button>
+‎  <button onclick="openChapter(7)">Babi na 7</button>
+‎  <button onclick="openChapter(8)">Babi na 8</button>
+‎  <button onclick="openChapter(9)">Babi na 9</button>
+‎  <button onclick="openChapter(10)">Babi na 10</button>
 ‎</nav>
 ‎
 ‎<main>
@@ -356,68 +327,68 @@
 ‎    id="search"
 ‎    type="text"
 ‎    placeholder="🔎 Nemo babi..."
+‎    onkeyup="searchChapters()"
 ‎  >
 ‎
 ‎  <div class="chapter-list" id="chapterList">
 ‎
-‎    <div class="chapter-card" data-chapter="1">
+‎    <div class="chapter-card" onclick="openChapter(1)">
 ‎      <h3>Babi na 1</h3>
 ‎      <p>Farkon labarin Khalid da Fatima...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="2">
+‎    <div class="chapter-card" onclick="openChapter(2)">
 ‎      <h3>Babi na 2</h3>
-‎      <p>Ganawar da ta canja komai...</p>
+‎      <p>Ci gaban labarin...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="3">
+‎    <div class="chapter-card" onclick="openChapter(3)">
 ‎      <h3>Babi na 3</h3>
-‎      <p>Zuciya ta fara magana...</p>
+‎      <p>Wani sabon yanayi ya fara...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="4">
+‎    <div class="chapter-card" onclick="openChapter(4)">
 ‎      <h3>Babi na 4</h3>
-‎      <p>Sirrin zuciya...</p>
+‎      <p>Abin da ya faru tsakanin su...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="5">
+‎    <div class="chapter-card" onclick="openChapter(5)">
 ‎      <h3>Babi na 5</h3>
-‎      <p>Lokacin gwaji...</p>
+‎      <p>Labarin yana ƙara armashi...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="6">
+‎    <div class="chapter-card" onclick="openChapter(6)">
 ‎      <h3>Babi na 6</h3>
-‎      <p>Ƙarin kusanci...</p>
+‎      <p>Wani muhimmin lokaci a rayuwarsu...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="7">
+‎    <div class="chapter-card" onclick="openChapter(7)">
 ‎      <h3>Babi na 7</h3>
-‎      <p>Sabon shafi...</p>
+‎      <p>Ci gaba...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="8">
+‎    <div class="chapter-card" onclick="openChapter(8)">
 ‎      <h3>Babi na 8</h3>
-‎      <p>Gwajin amana...</p>
+‎      <p>Ci gaba...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="9">
+‎    <div class="chapter-card" onclick="openChapter(9)">
 ‎      <h3>Babi na 9</h3>
-‎      <p>Abin da zuciya ke so...</p>
+‎      <p>Ci gaba...</p>
 ‎    </div>
 ‎
-‎    <div class="chapter-card" data-chapter="10">
+‎    <div class="chapter-card" onclick="openChapter(10)">
 ‎      <h3>Babi na 10</h3>
-‎      <p>Ƙarshen farko...</p>
+‎      <p>Ƙarshen littafin...</p>
 ‎    </div>
 ‎
 ‎  </div>
+‎
 ‎</section>
 ‎
 ‎<section class="reader" id="reader">
 ‎
-‎  <button class="back-btn" id="backBtn">
-‎    ← Komawa
-‎  </button>
+‎  <button class="back-btn" onclick="showHome()">← Komawa</button>
 ‎
 ‎  <h2 id="chapterTitle"></h2>
 ‎
@@ -435,7 +406,7 @@
 ‎
 ‎const chapters = {
 ‎
-‎1:{
+‎1: {
 ‎title:"Babi na 1 — Farkon Labari",
 ‎text:`
 ‎<p>Wannan shi ne farkon labarin Khalid da Fatima, labarin da ya fara ne a cikin wani yanayi da babu wanda ya san irin yadda zai ƙare.</p>
@@ -446,29 +417,29 @@
 ‎`
 ‎},
 ‎
-‎2:{
+‎2: {
 ‎title:"Babi na 2 — Ganawar da Ta Canja Komai",
 ‎text:`
 ‎<p>Bayan ganawar farko, Khalid ya ci gaba da tunanin Fatima. Ba wai don kawai ya gan ta ba ne, amma saboda yadda halinta ya yi masa tasiri.</p>
 ‎
-‎<p>Fatima ita ma ta lura da natsuwar Khalid. Duk da cewa ba su san juna sosai ba, akwai wani yanayi na fahimtar juna da ya fara bayyana a tsakaninsu.</p>
+‎<p>Fatima kuwa ita ma ta lura da natsuwar Khalid. Duk da cewa ba su san juna sosai ba, akwai wani yanayi na fahimtar juna da ya fara bayyana a tsakaninsu.</p>
 ‎
 ‎<p>Rayuwa ta fara ɗaukar sabon salo, kuma labarin su ya fara yin nisa fiye da yadda suka zata.</p>
 ‎`
 ‎},
 ‎
-‎3:{
+‎3: {
 ‎title:"Babi na 3 — Zuciya Ta Fara Magana",
 ‎text:`
 ‎<p>Yayin da kwanaki suka wuce, Khalid ya fara fahimtar cewa abin da yake ji ba kawai sha'awa ce ta wucewa ba.</p>
 ‎
-‎<p>Fatima ta zama mutum da yake jin daɗin tattaunawa da ita, kuma kowace magana da suke yi tana ƙara kusantar da su.</p>
+‎<p>Fatima ta zama mutum da yake jin daɗin tattaunawa da shi, kuma kowace magana da suke yi tana ƙara kusantar da su.</p>
 ‎
 ‎<p>Amma soyayya tana buƙatar haƙuri, fahimta da amana. Su ma sai sun koyi waɗannan abubuwan.</p>
 ‎`
 ‎},
 ‎
-‎4:{
+‎4: {
 ‎title:"Babi na 4 — Sirrin Zuciya",
 ‎text:`
 ‎<p>Khalid ya fara tambayar kansa ko ya kamata ya bayyana abin da yake ji. Ya san cewa kalmar soyayya ba ƙaramin abu ba ce.</p>
@@ -479,7 +450,7 @@
 ‎`
 ‎},
 ‎
-‎5:{
+‎5: {
 ‎title:"Babi na 5 — Lokacin Gwaji",
 ‎text:`
 ‎<p>Ba kowace hanya ce ta soyayya take tafiya cikin sauƙi ba. Akwai lokacin da mutum yake buƙatar haƙuri domin kada ƙaramin rashin fahimta ya lalata babban abu.</p>
@@ -490,7 +461,7 @@
 ‎`
 ‎},
 ‎
-‎6:{
+‎6: {
 ‎title:"Babi na 6 — Ƙarin Kusanci",
 ‎text:`
 ‎<p>Labarin Khalid da Fatima ya ƙara zurfi. Duk da abubuwan da suka faru, sun fahimci cewa akwai wani abu na musamman da yake haɗa zukatansu.</p>
@@ -501,18 +472,18 @@
 ‎`
 ‎},
 ‎
-‎7:{
+‎7: {
 ‎title:"Babi na 7 — Sabon Shafi",
 ‎text:`
-‎<p>Wannan babin ya ci gaba da labarin Khalid da Fatima daga inda babi na shida ya tsaya.</p>
+‎<p>Wannan babin zai ci gaba da labarin Khalid da Fatima daga inda babi na shida ya tsaya.</p>
 ‎
-‎<p>A wannan lokaci, abubuwan da suka faru sun fara bayyana musu ainihin abin da suke so daga rayuwarsu.</p>
+‎<p>A wannan lokaci, abubuwan da suka faru za su fara bayyana musu ainihin abin da suke so daga rayuwarsu.</p>
 ‎
-‎<p>Shafin soyayyarsu ya buɗe zuwa wani sabon mataki.</p>
+‎<p>Shafin soyayyarsu yana buɗewa zuwa wani sabon mataki.</p>
 ‎`
 ‎},
 ‎
-‎8:{
+‎8: {
 ‎title:"Babi na 8 — Gwajin Amana",
 ‎text:`
 ‎<p>Khalid da Fatima sun fuskanci wani sabon yanayi da ya buƙaci su ƙara nuna haƙuri da fahimtar juna.</p>
@@ -523,7 +494,7 @@
 ‎`
 ‎},
 ‎
-‎9:{
+‎9: {
 ‎title:"Babi na 9 — Abin da Zuciya Ke So",
 ‎text:`
 ‎<p>A wannan lokaci, abubuwa sun fara yin sauƙi. Khalid ya fahimci cewa wani lokaci mutum baya buƙatar abubuwa masu yawa domin ya ji daɗin rayuwa.</p>
@@ -534,7 +505,7 @@
 ‎`
 ‎},
 ‎
-‎10:{
+‎10: {
 ‎title:"Babi na 10 — Ƙarshen Farko",
 ‎text:`
 ‎<p>Abubuwan da Khalid da Fatima suka fuskanta sun koya musu darussa da yawa game da soyayya, amana da haƙuri.</p>
@@ -549,102 +520,56 @@
 ‎
 ‎};
 ‎
-‎const home = document.getElementById("home");
-‎const reader = document.getElementById("reader");
-‎const chapterTitle = document.getElementById("chapterTitle");
-‎const chapterText = document.getElementById("chapterText");
-‎const sideMenu = document.getElementById("sideMenu");
-‎const overlay = document.getElementById("overlay");
-‎
 ‎function openMenu(){
-‎  sideMenu.classList.add("open");
-‎  overlay.classList.add("show");
+‎  document.getElementById("sideMenu").classList.add("open");
+‎  document.getElementById("overlay").classList.add("show");
 ‎}
 ‎
 ‎function closeMenu(){
-‎  sideMenu.classList.remove("open");
-‎  overlay.classList.remove("show");
+‎  document.getElementById("sideMenu").classList.remove("open");
+‎  document.getElementById("overlay").classList.remove("show");
 ‎}
 ‎
 ‎function showHome(){
-‎  home.style.display="block";
-‎  reader.classList.remove("active");
+‎  document.getElementById("home").style.display="block";
+‎  document.getElementById("reader").classList.remove("active");
 ‎  closeMenu();
 ‎  window.scrollTo(0,0);
 ‎}
 ‎
 ‎function openChapter(number){
+‎  const chapter=chapters[number];
 ‎
-‎  const chapter = chapters[number];
+‎  document.getElementById("home").style.display="none";
+‎  document.getElementById("reader").classList.add("active");
 ‎
-‎  if(!chapter){
-‎    return;
-‎  }
-‎
-‎  home.style.display="none";
-‎
-‎  reader.classList.add("active");
-‎
-‎  chapterTitle.textContent=chapter.title;
-‎
-‎  chapterText.innerHTML=chapter.text;
+‎  document.getElementById("chapterTitle").innerHTML=chapter.title;
+‎  document.getElementById("chapterText").innerHTML=chapter.text;
 ‎
 ‎  closeMenu();
-‎
 ‎  window.scrollTo(0,0);
 ‎}
 ‎
-‎document.getElementById("menuBtn").addEventListener("click",openMenu);
-‎
-‎overlay.addEventListener("click",closeMenu);
-‎
-‎document.getElementById("backBtn").addEventListener("click",showHome);
-‎
-‎document.getElementById("darkBtn").addEventListener("click",function(){
+‎function toggleDark(){
 ‎  document.body.classList.toggle("dark");
-‎});
+‎}
 ‎
-‎document.querySelectorAll(".chapter-card").forEach(function(card){
+‎function searchChapters(){
 ‎
-‎  card.addEventListener("click",function(){
+‎  const value=document
+‎    .getElementById("search")
+‎    .value
+‎    .toLowerCase();
 ‎
-‎    const number = Number(card.dataset.chapter);
+‎  const cards=document.querySelectorAll(".chapter-card");
 ‎
-‎    openChapter(number);
-‎
+‎  cards.forEach(card=>{
+‎    card.style.display=
+‎      card.innerText.toLowerCase().includes(value)
+‎      ? "block"
+‎      : "none";
 ‎  });
-‎
-‎});
-‎
-‎document.querySelectorAll(".side-menu button").forEach(function(button){
-‎
-‎  button.addEventListener("click",function(){
-‎
-‎    const number = Number(button.dataset.chapter);
-‎
-‎    if(number === 0){
-‎      showHome();
-‎    }else{
-‎      openChapter(number);
-‎    }
-‎
-‎  });
-‎
-‎});
-‎
-‎document.getElementById("search").addEventListener("input",function(){
-‎
-‎  const value=this.value.toLowerCase();
-‎
-‎  document.querySelectorAll(".chapter-card").forEach(function(card){
-‎
-‎    const text=card.innerText.toLowerCase();
-‎
-‎    card.style.display=text.includes(value) ? "block" : "none";
-‎
-‎  });
-‎
-‎});
+‎}
 ‎
 ‎</script>
 ‎
