@@ -637,3 +637,116 @@
 ‎
 ‎<p>
 ‎Fatima ta ce, “Idan ni da kai muna
+da gaskiya da haƙuri, za mu iya
+wuce kowace jarabawa.”
+</p>
+
+<p>
+Khalid ya riƙe hannunta ya ce,
+“Zan yi iya ƙoƙarina in kiyaye
+zuciyarki.”
+</p>
+
+<p>
+Fatima ta murmusa ta ce,
+“Ni kuma zan kiyaye taka.”
+</p>
+
+<p>
+A wannan ranar alkawarin da suka yi
+ya fi kowace magana ƙarfi.
+</p>
+
+</section>
+
+
+<section class="chapter" id="babi10">
+<h2>Babi na 10 — Zuciya Ta</h2>
+
+<p>
+Lokaci ya wuce, amma soyayyar Khalid
+da Fatima ta ƙara zama mai zurfi.
+Sun fahimci cewa soyayya ba kawai
+kalmomi ba ce.
+</p>
+
+<p>
+Soyayya ita ce kulawa. Ita ce haƙuri.
+Ita ce amana. Ita ce mutum ya riƙe
+hannun wanda yake so lokacin da duniya
+ta yi masa nauyi.
+</p>
+
+<p>
+Khalid ya kalli Fatima ya ce:
+</p>
+
+<div class="quote">
+“Fatima, ke ce wadda zuciyata ta zaɓa.”
+</div>
+
+<p>
+Fatima ta murmusa ta ce:
+“Idan soyayya ta gaskiya ce, zuciya
+ba ta manta wanda ta zaɓa.”
+</p>
+
+<p>
+Kuma haka labarin Zuciya ta ya ci gaba
+da zama abin tunawa a zukatan masu karatu.
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+<p>❤️ Zuciya ta</p>
+<p>Marubuci: Khalid Dauda</p>
+</footer>
+
+
+<script>
+
+function openMenu(){
+document.getElementById("menu").classList.add("open");
+document.getElementById("overlay").classList.add("show");
+}
+
+function closeMenu(){
+document.getElementById("menu").classList.remove("open");
+document.getElementById("overlay").classList.remove("show");
+}
+
+function toggleNight(){
+document.body.classList.toggle("night");
+}
+
+function searchBook(){
+
+let input =
+document.getElementById("searchBox").value.toLowerCase();
+
+let chapters =
+document.querySelectorAll(".chapter");
+
+chapters.forEach(function(chapter){
+
+let text =
+chapter.innerText.toLowerCase();
+
+if(text.includes(input)){
+chapter.style.display="block";
+}else{
+chapter.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
