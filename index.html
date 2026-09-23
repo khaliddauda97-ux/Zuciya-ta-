@@ -3,275 +3,59 @@
 ‎<head>
 ‎<meta charset="UTF-8">
 ‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
-‎
 ‎<title>Zuciya ta — Khalid Dauda</title>
 ‎
 ‎<style>
-‎*{
-‎  box-sizing:border-box;
-‎  margin:0;
-‎  padding:0;
+‎body {
+‎  margin: 0;
+‎  font-family: Georgia, serif;
+‎  background: #fff5f7;
+‎  color: #333;
+‎  line-height: 1.8;
 ‎}
 ‎
-‎body{
-‎  font-family:Georgia, "Times New Roman", serif;
-‎  background:#f8f1e7;
-‎  color:#33251f;
-‎  line-height:1.8;
+‎header {
+‎  background: linear-gradient(135deg, #8b0000, #d6336c);
+‎  color: white;
+‎  text-align: center;
+‎  padding: 45px 20px;
 ‎}
 ‎
-‎header{
-‎  background:linear-gradient(135deg,#7b1e3a,#b8325c);
-‎  color:white;
-‎  padding:25px 18px;
-‎  text-align:center;
-‎  position:sticky;
-‎  top:0;
-‎  z-index:10;
-‎  box-shadow:0 3px 12px #0003;
+‎header h1 {
+‎  font-size: 42px;
+‎  margin: 0;
 ‎}
 ‎
-‎header h1{
-‎  font-size:32px;
-‎  letter-spacing:1px;
+‎header p {
+‎  font-size: 18px;
+‎  margin-top: 10px;
 ‎}
 ‎
-‎header p{
-‎  font-size:14px;
-‎  opacity:.9;
+‎.book {
+‎  max-width: 850px;
+‎  margin: 30px auto;
+‎  padding: 0 20px;
 ‎}
 ‎
-‎.menu-btn{
-‎  position:absolute;
-‎  left:15px;
-‎  top:22px;
-‎  background:none;
-‎  border:0;
-‎  color:white;
-‎  font-size:27px;
-‎  cursor:pointer;
+‎.chapter {
+‎  background: white;
+‎  margin-bottom: 25px;
+‎  padding: 25px;
+‎  border-radius: 15px;
+‎  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 ‎}
 ‎
-‎.dark-btn{
-‎  position:absolute;
-‎  right:15px;
-‎  top:22px;
-‎  background:none;
-‎  border:0;
-‎  color:white;
-‎  font-size:23px;
-‎  cursor:pointer;
+‎.chapter h2 {
+‎  color: #a00035;
+‎  text-align: center;
 ‎}
 ‎
-‎.side-menu{
-‎  position:fixed;
-‎  left:-290px;
-‎  top:0;
-‎  width:275px;
-‎  height:100%;
-‎  background:#fff;
-‎  z-index:30;
-‎  box-shadow:5px 0 18px #0004;
-‎  transition:.3s;
-‎  overflow-y:auto;
-‎}
-‎
-‎.side-menu.open{
-‎  left:0;
-‎}
-‎
-‎.side-menu h2{
-‎  background:#7b1e3a;
-‎  color:white;
-‎  padding:25px 18px;
-‎}
-‎
-‎.side-menu button{
-‎  display:block;
-‎  width:100%;
-‎  padding:14px 20px;
-‎  text-align:left;
-‎  border:0;
-‎  border-bottom:1px solid #eee;
-‎  background:white;
-‎  color:#33251f;
-‎  font-size:16px;
-‎  cursor:pointer;
-‎}
-‎
-‎.side-menu button:hover{
-‎  background:#f7e3ea;
-‎}
-‎
-‎.overlay{
-‎  display:none;
-‎  position:fixed;
-‎  inset:0;
-‎  background:#0008;
-‎  z-index:20;
-‎}
-‎
-‎.overlay.show{
-‎  display:block;
-‎}
-‎
-‎main{
-‎  max-width:850px;
-‎  margin:auto;
-‎  padding:25px 18px 70px;
-‎}
-‎
-‎.cover{
-‎  text-align:center;
-‎  padding:45px 15px;
-‎  background:white;
-‎  border-radius:20px;
-‎  box-shadow:0 4px 18px #0002;
-‎  margin-bottom:25px;
-‎}
-‎
-‎.cover .heart{
-‎  font-size:55px;
-‎}
-‎
-‎.cover h2{
-‎  color:#7b1e3a;
-‎  font-size:36px;
-‎  margin:8px 0;
-‎}
-‎
-‎.cover h3{
-‎  font-weight:normal;
-‎  color:#8c6a73;
-‎}
-‎
-‎.author{
-‎  margin-top:20px;
-‎  font-size:15px;
-‎}
-‎
-‎.search{
-‎  width:100%;
-‎  padding:14px;
-‎  border:1px solid #ddd;
-‎  border-radius:12px;
-‎  margin-bottom:20px;
-‎  font-size:16px;
-‎}
-‎
-‎.chapter-list{
-‎  display:grid;
-‎  gap:12px;
-‎}
-‎
-‎.chapter-card{
-‎  background:white;
-‎  padding:18px;
-‎  border-radius:14px;
-‎  box-shadow:0 3px 12px #0001;
-‎  cursor:pointer;
-‎  border-left:5px solid #b8325c;
-‎}
-‎
-‎.chapter-card h3{
-‎  color:#7b1e3a;
-‎}
-‎
-‎.chapter-card p{
-‎  font-size:13px;
-‎  color:#777;
-‎}
-‎
-‎.reader{
-‎  display:none;
-‎  background:white;
-‎  padding:25px 20px;
-‎  border-radius:16px;
-‎  box-shadow:0 3px 15px #0002;
-‎}
-‎
-‎.reader.active{
-‎  display:block;
-‎}
-‎
-‎.reader h2{
-‎  color:#7b1e3a;
-‎  text-align:center;
-‎  margin-bottom:20px;
-‎}
-‎
-‎.reader p{
-‎  margin-bottom:18px;
-‎  text-align:justify;
-‎  font-size:17px;
-‎}
-‎
-‎.back-btn{
-‎  background:#7b1e3a;
-‎  color:white;
-‎  border:0;
-‎  padding:12px 20px;
-‎  border-radius:10px;
-‎  cursor:pointer;
-‎  margin-bottom:20px;
-‎}
-‎
-‎footer{
-‎  text-align:center;
-‎  padding:25px;
-‎  background:#7b1e3a;
-‎  color:white;
-‎  font-size:13px;
-‎}
-‎
-‎body.dark{
-‎  background:#171317;
-‎  color:#eee;
-‎}
-‎
-‎body.dark .cover,
-‎body.dark .reader,
-‎body.dark .chapter-card{
-‎  background:#252025;
-‎  color:#eee;
-‎}
-‎
-‎body.dark .chapter-card p{
-‎  color:#bbb;
-‎}
-‎
-‎body.dark .side-menu{
-‎  background:#252025;
-‎}
-‎
-‎body.dark .side-menu button{
-‎  background:#252025;
-‎  color:#eee;
-‎  border-color:#444;
-‎}
-‎
-‎body.dark .search{
-‎  background:#252025;
-‎  color:white;
-‎  border-color:#555;
-‎}
-‎
-‎@media(max-width:600px){
-‎  header h1{
-‎    font-size:25px;
-‎  }
-‎
-‎  .cover h2{
-‎    font-size:30px;
-‎  }
-‎
-‎  main{
-‎    padding:18px 12px 50px;
-‎  }
-‎
-‎  .reader p{
-‎    font-size:16px;
-‎  }
+‎footer {
+‎  text-align: center;
+‎  background: #8b0000;
+‎  color: white;
+‎  padding: 25px;
+‎  margin-top: 40px;
 ‎}
 ‎</style>
 ‎</head>
@@ -279,300 +63,116 @@
 ‎<body>
 ‎
 ‎<header>
-‎  <button class="menu-btn" onclick="openMenu()">☰</button>
-‎
-‎  <h1>Zuciya ta</h1>
-‎  <p>Labarin Khalid da Fatima</p>
-‎
-‎  <button class="dark-btn" onclick="toggleDark()">☾</button>
+‎  <h1>❤️ Zuciya ta ❤️</h1>
+‎  <p>Littafin Soyayya</p>
+‎  <p><strong>Marubuci: Khalid Dauda</strong></p>
 ‎</header>
 ‎
-‎<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+‎<div class="book">
 ‎
-‎<nav class="side-menu" id="sideMenu">
-‎  <h2>📖 Zuciya ta</h2>
+‎<section class="chapter">
+‎<h2>BABI NA 1 — FARKON HADUWA</h2>
 ‎
-‎  <button onclick="showHome()">🏠 Farko</button>
-‎  <button onclick="openChapter(1)">Babi na 1</button>
-‎  <button onclick="openChapter(2)">Babi na 2</button>
-‎  <button onclick="openChapter(3)">Babi na 3</button>
-‎  <button onclick="openChapter(4)">Babi na 4</button>
-‎  <button onclick="openChapter(5)">Babi na 5</button>
-‎  <button onclick="openChapter(6)">Babi na 6</button>
-‎  <button onclick="openChapter(7)">Babi na 7</button>
-‎  <button onclick="openChapter(8)">Babi na 8</button>
-‎  <button onclick="openChapter(9)">Babi na 9</button>
-‎  <button onclick="openChapter(10)">Babi na 10</button>
-‎</nav>
+‎<p>
+‎A wani gari mai natsuwa, wani matashi mai suna Khalid ya kasance yana rayuwa cikin sauki.
+‎Bai taɓa tunanin cewa wata rana zai haɗu da wadda za ta sauya tunaninsa da rayuwarsa ba.
+‎</p>
 ‎
-‎<main>
+‎<p>
+‎Wata rana, yayin da yake tafiya, sai idanunsa suka haɗu da wata yarinya mai suna Fatima.
+‎A wannan lokacin, zuciyarsa ta fara bugawa da wani yanayi da bai taɓa fahimta ba.
+‎</p>
 ‎
-‎<section id="home">
-‎
-‎  <div class="cover">
-‎    <div class="heart">❤️</div>
-‎
-‎    <h2>Zuciya ta</h2>
-‎
-‎    <h3>Labarin Khalid da Fatima</h3>
-‎
-‎    <div class="author">
-‎      <p><strong>Marubuci:</strong> Khalid Dauda</p>
-‎      <p>Labari na soyayya</p>
-‎    </div>
-‎  </div>
-‎
-‎  <input
-‎    class="search"
-‎    id="search"
-‎    type="text"
-‎    placeholder="🔎 Nemo babi..."
-‎    onkeyup="searchChapters()"
-‎  >
-‎
-‎  <div class="chapter-list" id="chapterList">
-‎
-‎    <div class="chapter-card" onclick="openChapter(1)">
-‎      <h3>Babi na 1</h3>
-‎      <p>Farkon labarin Khalid da Fatima...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(2)">
-‎      <h3>Babi na 2</h3>
-‎      <p>Ci gaban labarin...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(3)">
-‎      <h3>Babi na 3</h3>
-‎      <p>Wani sabon yanayi ya fara...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(4)">
-‎      <h3>Babi na 4</h3>
-‎      <p>Abin da ya faru tsakanin su...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(5)">
-‎      <h3>Babi na 5</h3>
-‎      <p>Labarin yana ƙara armashi...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(6)">
-‎      <h3>Babi na 6</h3>
-‎      <p>Wani muhimmin lokaci a rayuwarsu...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(7)">
-‎      <h3>Babi na 7</h3>
-‎      <p>Ci gaba...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(8)">
-‎      <h3>Babi na 8</h3>
-‎      <p>Ci gaba...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(9)">
-‎      <h3>Babi na 9</h3>
-‎      <p>Ci gaba...</p>
-‎    </div>
-‎
-‎    <div class="chapter-card" onclick="openChapter(10)">
-‎      <h3>Babi na 10</h3>
-‎      <p>Ƙarshen littafin...</p>
-‎    </div>
-‎
-‎  </div>
-‎
+‎<p>
+‎Fatima ta wuce, amma tunaninta ya zauna a zuciyar Khalid.
+‎Ya fara tambayar kansa: “Shin wannan ita ce wadda zuciyata take jira?”
+‎</p>
 ‎</section>
 ‎
-‎<section class="reader" id="reader">
+‎<section class="chapter">
+‎<h2>BABI NA 2 — SAƘON ZUCIYA</h2>
 ‎
-‎  <button class="back-btn" onclick="showHome()">← Komawa</button>
+‎<p>
+‎Kwanaki suka kasance suna wucewa, amma Khalid bai iya mantawa da Fatima ba.
+‎Duk lokacin da ya tuna murmushinta, zuciyarsa sai ta cika da farin ciki.
+‎</p>
 ‎
-‎  <h2 id="chapterTitle"></h2>
+‎<p>
+‎A hankali, soyayya ta fara shiga tsakanin zukatansu.
+‎Ba wai saboda kyawun fuska kawai ba, amma saboda yadda kowannensu yake fahimtar ɗayan.
+‎</p>
 ‎
-‎  <div id="chapterText"></div>
-‎
+‎<p>
+‎Khalid ya gane cewa soyayya ta gaskiya ba ta tsaya kan kalmomi ba.
+‎Tana buƙatar gaskiya, amana, haƙuri da kulawa.
+‎</p>
 ‎</section>
 ‎
-‎</main>
+‎<section class="chapter">
+‎<h2>BABI NA 3 — SIRRIN SOYAYYA</h2>
+‎
+‎<p>
+‎Fatima ta fara fahimtar cewa Khalid ba kamar sauran mutane ba ne.
+‎A duk lokacin da take cikin damuwa, kalamansa suna ba ta ƙarfin guiwa.
+‎</p>
+‎
+‎<p>
+‎Su biyun suka fara raba tunaninsu, burinsu da mafarkansu.
+‎Kowannensu ya fara ganin makomar rayuwarsa tare da ɗayan.
+‎</p>
+‎</section>
+‎
+‎<section class="chapter">
+‎<h2>BABI NA 4 — JARABAWAR ZUCIYA</h2>
+‎
+‎<p>
+‎Amma soyayya ba kullum take zuwa da sauƙi ba.
+‎Wata rana, wata matsala ta taso wadda ta sa suka fara fuskantar jarabawa.
+‎</p>
+‎
+‎<p>
+‎Khalid ya fahimci cewa idan soyayyarsa ga Fatima ta kasance ta gaskiya,
+‎to dole ne ya kasance mai haƙuri kuma ya kare amana.
+‎</p>
+‎</section>
+‎
+‎<section class="chapter">
+‎<h2>BABI NA 5 — AMANA</h2>
+‎
+‎<p>
+‎A hankali, abubuwa suka fara daidaituwa.
+‎Fatima ta fahimci cewa Khalid yana daraja ta, kuma Khalid ya gane cewa Fatima ita ce wadda zuciyarsa ta zaɓa.
+‎</p>
+‎
+‎<p>
+‎Soyayyarsu ta ƙara ƙarfi saboda amana da fahimtar juna.
+‎</p>
+‎</section>
+‎
+‎<section class="chapter">
+‎<h2>BABI NA 6 — ZUCIYA TA</h2>
+‎
+‎<p>
+‎Khalid ya kalli Fatima ya ce:
+‎“Fatima, akwai abubuwa da yawa da mutum zai iya rasa a duniya,
+‎amma bana son in rasa ke.”
+‎</p>
+‎
+‎<p>
+‎Fatima ta yi murmushi.
+‎A wannan lokacin, dukansu suka fahimci cewa abin da ya haɗa su ba kalmomi ba ne kawai,
+‎amma wata soyayya da ta samu wuri a cikin zukatansu.
+‎</p>
+‎
+‎<p>
+‎Kuma daga wannan rana, sun fahimci cewa idan zuciya ta zaɓi wanda take so,
+‎ba sauƙi a manta da shi.
+‎</p>
+‎</section>
+‎
+‎</div>
 ‎
 ‎<footer>
-‎  © 2026 Zuciya ta — Khalid Dauda
-‎</footer>
-‎
-‎<script>
-‎
-‎const chapters = {
-‎
-‎1: {
-‎title:"Babi na 1 — Farkon Labari",
-‎text:`
-‎<p>Wannan shi ne farkon labarin Khalid da Fatima, labarin da ya fara ne a cikin wani yanayi da babu wanda ya san irin yadda zai ƙare.</p>
-‎
-‎<p>Khalid mutum ne mai natsuwa, wanda yake daraja mutanen da suke kusa da shi. A wata rana ne ya haɗu da Fatima, kuma wannan haɗuwar ta zama farkon wani sabon babi a rayuwarsa.</p>
-‎
-‎<p>Da farko, babu wanda ya yi tunanin cewa wannan ƙaramar ganawa za ta iya zama farkon labari mai tsawo. Amma zuciya tana da nata sirrin.</p>
-‎`
-‎},
-‎
-‎2: {
-‎title:"Babi na 2 — Ganawar da Ta Canja Komai",
-‎text:`
-‎<p>Bayan ganawar farko, Khalid ya ci gaba da tunanin Fatima. Ba wai don kawai ya gan ta ba ne, amma saboda yadda halinta ya yi masa tasiri.</p>
-‎
-‎<p>Fatima kuwa ita ma ta lura da natsuwar Khalid. Duk da cewa ba su san juna sosai ba, akwai wani yanayi na fahimtar juna da ya fara bayyana a tsakaninsu.</p>
-‎
-‎<p>Rayuwa ta fara ɗaukar sabon salo, kuma labarin su ya fara yin nisa fiye da yadda suka zata.</p>
-‎`
-‎},
-‎
-‎3: {
-‎title:"Babi na 3 — Zuciya Ta Fara Magana",
-‎text:`
-‎<p>Yayin da kwanaki suka wuce, Khalid ya fara fahimtar cewa abin da yake ji ba kawai sha'awa ce ta wucewa ba.</p>
-‎
-‎<p>Fatima ta zama mutum da yake jin daɗin tattaunawa da shi, kuma kowace magana da suke yi tana ƙara kusantar da su.</p>
-‎
-‎<p>Amma soyayya tana buƙatar haƙuri, fahimta da amana. Su ma sai sun koyi waɗannan abubuwan.</p>
-‎`
-‎},
-‎
-‎4: {
-‎title:"Babi na 4 — Sirrin Zuciya",
-‎text:`
-‎<p>Khalid ya fara tambayar kansa ko ya kamata ya bayyana abin da yake ji. Ya san cewa kalmar soyayya ba ƙaramin abu ba ce.</p>
-‎
-‎<p>Fatima kuma tana lura da yadda Khalid yake kula da ita. A hankali, wata irin amana ta fara ginuwa tsakaninsu.</p>
-‎
-‎<p>Abin da ya kasance kamar ƙaramin abu a farko ya fara zama muhimmin abu a rayuwarsu.</p>
-‎`
-‎},
-‎
-‎5: {
-‎title:"Babi na 5 — Lokacin Gwaji",
-‎text:`
-‎<p>Ba kowace hanya ce ta soyayya take tafiya cikin sauƙi ba. Akwai lokacin da mutum yake buƙatar haƙuri domin kada ƙaramin rashin fahimta ya lalata babban abu.</p>
-‎
-‎<p>Khalid da Fatima sun fuskanci wani lokaci da ya sa kowannensu ya yi tunani sosai.</p>
-‎
-‎<p>A wannan lokacin ne suka fara fahimtar cewa amana da gaskiya suna da muhimmanci fiye da kalmomi masu daɗi.</p>
-‎`
-‎},
-‎
-‎6: {
-‎title:"Babi na 6 — Ƙarin Kusanci",
-‎text:`
-‎<p>Labarin Khalid da Fatima ya ƙara zurfi. Duk da abubuwan da suka faru, sun fahimci cewa akwai wani abu na musamman da yake haɗa zukatansu.</p>
-‎
-‎<p>Sun koyi sauraron juna, fahimtar juna da kuma mutunta ra'ayin juna.</p>
-‎
-‎<p>Amma abin da ke gabansu har yanzu yana ɗauke da abubuwan da ba su san yadda za su kasance ba.</p>
-‎`
-‎},
-‎
-‎7: {
-‎title:"Babi na 7 — Sabon Shafi",
-‎text:`
-‎<p>Wannan babin zai ci gaba da labarin Khalid da Fatima daga inda babi na shida ya tsaya.</p>
-‎
-‎<p>A wannan lokaci, abubuwan da suka faru za su fara bayyana musu ainihin abin da suke so daga rayuwarsu.</p>
-‎
-‎<p>Shafin soyayyarsu yana buɗewa zuwa wani sabon mataki.</p>
-‎`
-‎},
-‎
-‎8: {
-‎title:"Babi na 8 — Gwajin Amana",
-‎text:`
-‎<p>Khalid da Fatima sun fuskanci wani sabon yanayi da ya buƙaci su ƙara nuna haƙuri da fahimtar juna.</p>
-‎
-‎<p>Amana ta kasance ginshiƙin da suka dogara da shi yayin da suke ƙoƙarin kare abin da ya haɗa su.</p>
-‎
-‎<p>Amma har yanzu labarin bai kai ƙarshensa ba.</p>
-‎`
-‎},
-‎
-‎9: {
-‎title:"Babi na 9 — Abin da Zuciya Ke So",
-‎text:`
-‎<p>A wannan lokaci, abubuwa sun fara yin sauƙi. Khalid ya fahimci cewa wani lokaci mutum baya buƙatar abubuwa masu yawa domin ya ji daɗin rayuwa.</p>
-‎
-‎<p>Fatima kuwa ta fahimci cewa gaskiyar kulawa tana bayyana ne ta hanyar ayyuka da mutunta juna.</p>
-‎
-‎<p>Su biyun suka fara kallon gaba da wani sabon fata.</p>
-‎`
-‎},
-‎
-‎10: {
-‎title:"Babi na 10 — Ƙarshen Farko",
-‎text:`
-‎<p>Abubuwan da Khalid da Fatima suka fuskanta sun koya musu darussa da yawa game da soyayya, amana da haƙuri.</p>
-‎
-‎<p>Sun fahimci cewa kyakkyawan labari ba wai rashin matsala ba ne, amma yadda mutane suke magance matsalolin da suka taso a tsakaninsu.</p>
-‎
-‎<p>Wannan shi ne ƙarshen wannan sashe na labarin “Zuciya ta”, amma abubuwan da suka faru za su kasance abin tunawa a zukatansu.</p>
-‎
-‎<p><strong>ƘARSHEN LITTAFI — ZUCIYA TA ❤️</strong></p>
-‎`
-‎}
-‎
-‎};
-‎
-‎function openMenu(){
-‎  document.getElementById("sideMenu").classList.add("open");
-‎  document.getElementById("overlay").classList.add("show");
-‎}
-‎
-‎function closeMenu(){
-‎  document.getElementById("sideMenu").classList.remove("open");
-‎  document.getElementById("overlay").classList.remove("show");
-‎}
-‎
-‎function showHome(){
-‎  document.getElementById("home").style.display="block";
-‎  document.getElementById("reader").classList.remove("active");
-‎  closeMenu();
-‎  window.scrollTo(0,0);
-‎}
-‎
-‎function openChapter(number){
-‎  const chapter=chapters[number];
-‎
-‎  document.getElementById("home").style.display="none";
-‎  document.getElementById("reader").classList.add("active");
-‎
-‎  document.getElementById("chapterTitle").innerHTML=chapter.title;
-‎  document.getElementById("chapterText").innerHTML=chapter.text;
-‎
-‎  closeMenu();
-‎  window.scrollTo(0,0);
-‎}
-‎
-‎function toggleDark(){
-‎  document.body.classList.toggle("dark");
-‎}
-‎
-‎function searchChapters(){
-‎
-‎  const value=document
-‎    .getElementById("search")
-‎    .value
-‎    .toLowerCase();
-‎
-‎  const cards=document.querySelectorAll(".chapter-card");
-‎
-‎  cards.forEach(card=>{
-‎    card.style.display=
-‎      card.innerText.toLowerCase().includes(value)
-‎      ? "block"
-‎      : "none";
-‎  });
-‎}
-‎
-‎</script>
-‎
-‎</body>
-‎</html>
+‎<p>© 2026 Zuciya ta</p>
+‎<p>Marubuci: Khalid
 ‎
